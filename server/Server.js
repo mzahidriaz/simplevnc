@@ -38,7 +38,7 @@ var Server = function(server, options){
   this.currentFrame = null;
   this.event = new EventEmitter();
   this.on = this.event.on.bind(this.event);
-  this.io = io(server, {log: false});
+  this.io = io(server, {path: options.path, log: false});
   this.io.sockets.on('connection', this.connectClient.bind(this));
 }
 
